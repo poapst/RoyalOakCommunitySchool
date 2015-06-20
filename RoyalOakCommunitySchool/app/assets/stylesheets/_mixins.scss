@@ -1,0 +1,8 @@
+//add content to all h type tags (h1, h2, h3, h4, h5, h6)
+@mixin hx() {
+  @for $index from 1 through 6 {
+    h#{$index} {
+      @content;
+    }
+  }
+}

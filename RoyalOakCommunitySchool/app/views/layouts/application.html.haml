@@ -1,0 +1,30 @@
+%html
+  %head
+    %title RoyalOakCommunitySchool
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %section.header
+      %header
+        .container
+          %h1 Royal Oak Community School
+      %nav.navbar.navbar-default
+        .container
+          .navbar-header
+            %button.navbar-toggle.collapsed{:type => "button", :data => {:toggle => "collapse", :target => "#nav-collapse"}, "aria-expanded" => "false"}
+              %span Menu
+          .collapse.navbar-collapse#nav-collapse
+            %ul.nav.navbar-nav
+              %li= link_to 'Home', controller: 'welcome'
+              %li= link_to 'Philosophy', controller: 'philosophy'
+              %li= link_to 'Program', controller: 'program'
+              %li= link_to 'News', controller: 'news'
+              %li= link_to 'Survey', controller: 'survey'
+              %li= link_to 'Founding Committee', controller: 'committee'
+              %li= link_to 'Location, Enrolling & Volunteering', controller: 'location'
+    %section.container.main
+      = yield
+    %footer
+      .container
+        %span Copyright 2015 Royal Oak Community School. All rights reserved.

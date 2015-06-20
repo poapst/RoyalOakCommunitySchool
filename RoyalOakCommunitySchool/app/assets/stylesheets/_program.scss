@@ -1,3 +1,9 @@
 // Place all the styles related to the program controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#program {
+  h3 {
+    @include make_responsive("font-size", ($mobile 16px, $small 16px));
+    @include make_responsive("font-weight", ($mobile 600, $small 600));
+  }
+}

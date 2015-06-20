@@ -1,0 +1,32 @@
+//add media variables and styles
+$phone: '(max-width: 479px)';
+$tablet: '(min-width: 480px) and (max-width: #{$screen-xs-max})';
+$mobile: '(max-width: #{$screen-xs-max})';
+$small: '(min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max})';
+$normal: '(min-width: #{$screen-md-min}) and (max-width: #{$screen-md-max})';
+$large: '(min-width: #{$screen-lg-min})';
+
+.hidden-mobile {
+  @media #{$mobile} {
+    display: none;
+  }
+}
+
+@mixin set_property_for_media_size($property, $sizeValuePair) {
+  $size: nth($sizeValuePair, 1);
+  $value: nth($sizeValuePair, 2);
+
+  @media #{$size} {
+    #{$property}: $value;
+  }
+}
+
+@mixin make_responsive($property, $sizeValueList) {
+  @if(length($sizeValueList) >= 1 and length(nth($sizeValueList, 1)) > 1) {
+    @each $sizeValuePair in $sizeValueList {
+      @include set_property_for_media_size($property, $sizeValuePair);
+    }
+  } @else if(length($sizeValueList) >= 1) {
+    @include set_property_for_media_size($property, $sizeValueList);
+  }
+}

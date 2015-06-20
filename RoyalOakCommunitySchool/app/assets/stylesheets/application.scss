@@ -18,6 +18,7 @@
 
 //Add general purpose items
 @import "variables";
+@import "media";
 @import "mixins";
 
 //Create main style
@@ -28,9 +29,19 @@ body {
 header {
   background-color: $bg-color;
   text-align: center;
+  .title {
+    @include make_responsive("font-size", ($phone 16px, $tablet 24px));
+  }
 }
 .navbar-default {
   background-color: $menu-bg-color;
+  @include make_responsive("font-size", ($small 11px));
+  .navbar-toggle {
+    background-color: $menu-button-bg-color;
+    &:active, &:hover, &:focus, &:visited {
+      background-color: $menu-button-bg-color;
+    }
+  }
 }
 .horiz-center {
   margin: 0 auto;
@@ -59,6 +70,7 @@ header {
   left: 0;
   right: 0;
   top: 0;
+  z-index: 1;
 }
 footer {
   background-color: $footer-bg-color;
@@ -69,6 +81,10 @@ footer {
   bottom: 0;
   padding-top: 10px;
   height: $footer-height;
+  @include make_responsive("font-size", ($phone 8px));
+}
+.relative {
+  position: relative;
 }
 
 //Add page specific styling

@@ -6,6 +6,12 @@
     padding-left: 0;
     li {
       list-style: none;
+      padding: 10px 0;
+      border-bottom: 1px solid $border-color;
+      p {
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
     }
   }
 }

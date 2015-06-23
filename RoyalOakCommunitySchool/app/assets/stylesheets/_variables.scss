@@ -1,8 +1,12 @@
-$bg-color: #eeeeff;
-$menu-bg-color: #aaffff;
-$menu-button-bg-color: #88ffff;
+$bg-color: white;
+$menu-bg-color: #5b7d4c;
+$menu-button-bg-color: #6b8d5c;
+$menu-bg-hover-color: $menu-button-bg-color;
 $footer-bg-color: $menu-bg-color;
 $text-color: black;
-$border-color: #e7e7e7;
+$menu-text-color: white;
+$footer-text-color: $menu-text-color;
+$border-color: #8d9084;
 $header-height: 141px;
 $footer-height: 40px;
+$logo-width: 75px;

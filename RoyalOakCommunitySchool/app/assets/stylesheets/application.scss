@@ -29,17 +29,47 @@ body {
 header {
   background-color: $bg-color;
   text-align: center;
+  .container {
+    position: relative;
+    height: 69px;
+  }
+  .logo {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -($logo-width * 0.8) / 2;
+    width: $logo-width;
+    img {
+      width: $logo-width;
+    }
+  }
   .title {
-    @include make_responsive("font-size", ($phone 16px, $tablet 24px));
+    margin-left: 50px;
+    @include make_responsive("margin-top", ($phone 36px, $tablet 29px));
+    @include make_responsive("margin-bottom", ($phone 18px, $tablet 14px));
+    @include make_responsive("font-size", ($phone 14px, $tablet 24px));
   }
 }
 .navbar-default {
   background-color: $menu-bg-color;
+  border-color: $border-color;
+  border-left: none;
+  border-right: none;
   @include make_responsive("font-size", ($small 11px));
   .navbar-toggle {
     background-color: $menu-button-bg-color;
+    color: $menu-text-color;
     &:active, &:hover, &:focus, &:visited {
       background-color: $menu-button-bg-color;
+    }
+  }
+  .navbar-nav > li > a {
+    color: $menu-text-color;
+    &:active, &:hover, &:focus, &:visited {
+      color: $menu-text-color;
+    }
+    &:hover {
+      background-color: $menu-bg-hover-color;
     }
   }
 }
@@ -74,12 +104,14 @@ header {
 }
 footer {
   background-color: $footer-bg-color;
+  color: $footer-text-color;
   border-top: 1px solid $border-color;
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   padding-top: 10px;
+  @include make_responsive("padding-top", ($phone 15px));
   height: $footer-height;
   @include make_responsive("font-size", ($phone 8px));
 }

@@ -118,6 +118,24 @@ footer {
 .relative {
   position: relative;
 }
+ul.seperator-list {
+  padding-left: 0;
+  > li {
+    list-style: none;
+    padding: 10px 0;
+    border-bottom: 1px solid $border-color;
+    p {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+.main-logo {
+  min-width: 250px;
+  @include make_responsive("float", ($desktop right));
+  @include make_responsive("margin", ($mobile (0 auto)));
+  @include make_responsive("display", ($mobile block));
+}
 
 //Add page specific styling
 @import "committee";

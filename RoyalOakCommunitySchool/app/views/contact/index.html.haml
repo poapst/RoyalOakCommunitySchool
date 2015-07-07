@@ -1,0 +1,38 @@
+%section#contact
+  %h2.sub-title Inquiry
+  .row
+    .col-sm-6
+      -if defined?(@contact) && @contact.errors.any?
+        .error-message
+          %h3
+            %span= pluralize(@contact.errors.count, "error")
+            %span prohibited this form from being submitted:
+          %ul
+            -@contact.errors.full_messages.each do |msg|
+              %li= msg
+      -if defined?(@success_message)
+        .success-message
+          %p= @success_message
+      = form_for :contact do |f|
+        .form-element
+          = f.label :name
+          = f.text_field :name
+        .form-element
+          = f.label :email, 'Email Address'
+          = f.text_field :email
+        .form-element
+          = f.label 'Phone number'
+          = f.text_field :phone
+        .form-element
+          = f.label :subject
+          = f.text_field :subject
+        .form-element
+          = f.label :message
+          = f.text_area :message
+        .form-element
+          = recaptcha_tags
+        .form-element
+          = f.submit 'Send'
+    .col-sm-6.contact-info
+      %p Or send inquiries to:
+      %p info@royaloakcommunityschool.ca

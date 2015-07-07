@@ -9,8 +9,8 @@
       %header
         .container
           .logo
-            =link_to image_tag('ROCS-logo-4.gif', class: 'horiz-center'), {:action => 'index', :controller => 'welcome'}
-          %h1.title Royal Oak Community School
+            = link_to image_tag('ROCS-logo-version-4-1.gif', class: 'horiz-center'), {:action => 'index', :controller => 'welcome'}
+          //%h1.title Royal Oak Community School
       %nav.navbar.navbar-default
         .container
           .navbar-header
@@ -25,6 +25,7 @@
               %li= link_to 'Survey', controller: 'survey'
               %li= link_to 'Founding Committee', controller: 'committee'
               %li= link_to 'Location, Enrolling & Volunteering', controller: 'location'
+              %li= link_to 'Contact', controller: 'contact'
     %section.container.main
       = yield
     %footer

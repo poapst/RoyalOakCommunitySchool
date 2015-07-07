@@ -1,12 +1,22 @@
+//colors
 $bg-color: white;
-$menu-bg-color: #5b7d4c;
-$menu-button-bg-color: #6b8d5c;
+$menu-bg-color: #335733;
+$menu-button-bg-color: #557755;
 $menu-bg-hover-color: $menu-button-bg-color;
 $footer-bg-color: $menu-bg-color;
-$text-color: black;
+$text-color: #06003a;
+$h-color: $text-color;
 $menu-text-color: white;
 $footer-text-color: $menu-text-color;
-$border-color: #8d9084;
-$header-height: 141px;
+$border-color: $text-color;
+$error-color: red;
+$success-color: green;
+
+//fixed dimensions
+$header-height: 69px;
+$nav-height: 52px;
+$total-header-height: $header-height + $nav-height + 20px;
 $footer-height: 40px;
-$logo-width: 75px;
+$logo-height: $header-height;
+$logo-ratio: 2.63;
+$logo-width: $logo-height * $logo-ratio;

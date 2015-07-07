@@ -11,6 +11,16 @@ module RoyalOakCommunitySchool
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+        :address => 'smtp.sendgrid.net',
+        :port => '587',
+        :authentication => :plain,
+        :user_name => ENV['sendgrid_username'],
+        :password => ENV['sendgrid_password'],
+        :domain => 'heroku.com',
+        :enable_starttls_auto => true
+    }
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.

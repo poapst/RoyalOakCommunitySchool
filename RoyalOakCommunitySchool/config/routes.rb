@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'contact/index'
+  post 'contact/index' => 'contact#create'
+
   get 'location/index'
 
   get 'committee/index'

@@ -1,0 +1,12 @@
+%p= @email.message
+%section.contact-info
+  .name
+    %span From:
+    %span= @email.name
+  .email
+    %span Email:
+    %span= @email.email
+  -if !@email.phone.blank?
+    .phone
+      %span Phone number:
+      %span= @email.phone

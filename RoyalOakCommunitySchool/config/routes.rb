@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'admission/fees'
+  get 'admission/application'
+
   get 'contact/index'
   post 'contact/index' => 'contact#create'
 

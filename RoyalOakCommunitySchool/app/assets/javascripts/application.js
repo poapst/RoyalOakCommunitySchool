@@ -15,3 +15,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+    $(".dropdown").hover(function () {
+        $(this).find(".dropdown-menu").css("display", "block");
+    }, function() {
+        $(this).find(".dropdown-menu").css("display", "none");
+    });
+});
+

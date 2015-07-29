@@ -12,6 +12,11 @@ $large: '(min-width: #{$screen-lg-min})';
     display: none;
   }
 }
+.hidden-not-mobile {
+  @media #{$desktop} {
+    display: none;
+  }
+}
 
 @mixin set_property_for_media_size($property, $sizeValuePair) {
   $size: nth($sizeValuePair, 1);

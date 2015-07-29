@@ -57,22 +57,14 @@ header {
   border-right: none;
   @include make_responsive("font-size", ($small 8px, $normal 12px));
   .navbar-toggle {
-    background-color: $menu-button-bg-color;
-    color: $menu-text-color;
-    &:active, &:hover, &:focus, &:visited {
-      background-color: $menu-button-bg-color;
-    }
+    @include button();
   }
   .navbar-nav {
     > li > a, > .open > a {
-      color: $menu-text-color;
-      &:active, &:hover, &:focus, &:visited {
-        background-color: $menu-bg-color;
-        color: $menu-text-color;
-      }
-      &:hover {
-        background-color: $menu-bg-hover-color;
-      }
+      @include menu_item();
+    }
+    .open .dropdown-menu > li > a {
+      @include menu_item();
     }
   }
   .dropdown-menu {
@@ -85,6 +77,11 @@ header {
       }
     }
     color: $menu-text-color;
+
+    @media #{$mobile} {
+      position: relative;
+      width: 100%;
+    }
   }
 }
 .header {
@@ -184,6 +181,12 @@ ul.seperator-list {
   input, textarea {
     border: 2px solid $error-color;
   }
+}
+.btn {
+  @include button();
+}
+.relative {
+  position: relative;
 }
 
 //Add page specific styling

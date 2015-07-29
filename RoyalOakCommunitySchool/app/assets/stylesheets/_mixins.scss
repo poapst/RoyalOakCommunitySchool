@@ -11,3 +11,24 @@
   padding-bottom: 20px;
   margin-bottom: 10px;
 }
+
+@mixin button() {
+  background-color: $menu-button-bg-color;
+  color: $menu-text-color;
+  &:active, &:hover, &:focus, &:visited {
+    background-color: $menu-button-bg-hover-color;
+    color: $menu-text-color;
+  }
+}
+
+@mixin menu_item() {
+  color: $menu-text-color;
+  &:active, &:focus, &:visited {
+    background-color: $menu-bg-color;
+    color: $menu-text-color;
+  }
+  &:hover {
+    background-color: $menu-bg-hover-color;
+    color: $menu-text-color;
+  }
+}
